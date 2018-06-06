@@ -1,3 +1,4 @@
+// June 6, 2018
 // source: https://www.hackerrank.com/challenges/abstract-classes-polymorphism/problem
 #include <iostream>
 #include <vector>
@@ -16,6 +17,7 @@ struct Node{
    Node(Node* p, Node* n, int k, int val):prev(p),next(n),key(k),value(val){};
    Node(int k, int val):prev(NULL),next(NULL),key(k),value(val){};
 };
+
 class Cache{
    
    protected: 
@@ -26,6 +28,7 @@ class Cache{
    virtual void set(int, int) = 0; //set function
    virtual int get(int) = 0; //get function
 };
+
 class LRUCache : public Cache{
    int listSize;
    public: 
@@ -39,6 +42,7 @@ class LRUCache : public Cache{
     private:
     Node *findItInCache(int key);
 };
+
 Node *LRUCache::findItInCache(int key)
 {
     for(Node *p = head; p; p = p->next)
@@ -46,6 +50,7 @@ Node *LRUCache::findItInCache(int key)
             return p;
     return NULL;
 }
+
 /*
 set() - Set/insert the value of the key, if present, otherwise add the key 
 as the most recently used key. If the cache has reached its capacity, 
