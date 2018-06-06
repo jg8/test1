@@ -64,7 +64,7 @@ void LRUCache::set(int key, int value) //set function
             if(current->next)
                 current->next->prev = current->prev;
             else // tail
-                tail =  current->prev;
+                tail =  current->prev; // This is important!
             current->next = head;
             current->prev = NULL;
             head->prev = current;
@@ -92,6 +92,7 @@ void LRUCache::set(int key, int value) //set function
             head = tail = current;
         else
         {
+            // Add the current in the front
             current->next = head;
             head->prev = current;
             head = current;
@@ -112,6 +113,7 @@ int LRUCache::get(int key) //get function
             return p->value;
     return -1;
 }
+
 int main() {
    int n, capacity,i;
    cin >> n >> capacity;
