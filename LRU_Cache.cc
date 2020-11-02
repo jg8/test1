@@ -2,6 +2,7 @@
 // source: https://www.hackerrank.com/challenges/abstract-classes-polymorphism/problem
 
 // Refreshed Nov 01 2020
+// Updated in branch myProj2
 
 #include <iostream>
 #include <vector>
